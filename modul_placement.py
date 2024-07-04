@@ -43,3 +43,11 @@ plt.show()
 # Print the randomly selected positions
 print("Randomly selected module positions:")
 print(module_positions)
+
+# Save the selected positions to a JSON file
+selected_positions_dict = [{'x': pos[0], 'y': pos[1], 'z': pos[2]} for pos in module_positions]
+
+with open('selected_module_positions.json', 'w') as output_file:
+    json.dump(selected_positions_dict, output_file, indent=4)
+
+print("Selected module positions saved to 'selected_module_positions.json'")
